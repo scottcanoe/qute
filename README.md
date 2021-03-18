@@ -5,8 +5,13 @@ This is a fork of Michael Malinowski's `qute`, a Qt helper library (https://gith
  
 ### Core
   - Support `PyQt6` and `PySide6`.
+
+### Extensions
   - Add my `QApplication` wrapper that works around problems with creating and executing a second `QApplication` after the first has finished. Also, possibly use scribble to help data persist data between subsequent `QApplication` executions.
-  - Roll in my console widget.
+  - Add my pyqtconsole subclass.
+  - Improve integration with Qt Designer
+    -  Open QtDesigner on demand.
+    -  Add support for pyqtgraph-based widgets.
 
 ### Scribble
   - Cache `ScribbleDictionary` instances so all users of a dictionary will be using identically the same dictionary.
