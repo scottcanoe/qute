@@ -1,14 +1,17 @@
 
 
-#Overview
+# Overview
+This is a fork of Michael Malinowski's `qute`, a Qt helper library (https://github.com/mikemalinowski/qute). This fork is intended as a playground for further extending Qt with the following developments:
+ 
+### Core
+  - Support `PyQt6` and `PySide6`.
+  - Roll in my qt application layer that works around the `QApplication`'s default behavior that makes it difficult to create and run applications after the first application has terminated.
+  - Roll in my console widget.
 
-Qute is a wrapped extension of Marcus Ottosson's Qt.py. The emphasis is on
-utilising the convience of Qt.py (allowing for use of PyQt, PySide and 
-PySide2 seamlessly) whilst also exposing a set of common pieces of functionality
-we tend to replicate and utilise in many places.
+### Scribble
+  - Cache `ScribbleDictionary` instances so all users of a dictionary will be using identically the same dictionary.
+  - Support custom JSON serializers. 
 
-
-#Key Features
 
 ## General Usage
 
