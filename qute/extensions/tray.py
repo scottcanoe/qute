@@ -5,9 +5,9 @@ import sys
 import functools
 import datetime
 
-from ..vendor import scribble
+
 from ..vendor import Qt
-from .. import utilities
+from .. import scribble, utilities
 
 
 # ------------------------------------------------------------------------------

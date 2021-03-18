@@ -1,4 +1,4 @@
-"""Minimal Python 2 & 3 shim around all Qt bindings
+"""Minimal Python shim around all Qt bindings
 
 DOCUMENTATION
     Qt.py was born in the film and visual effects industry to address
@@ -44,7 +44,7 @@ import shutil
 import importlib
 
 
-__version__ = "1.2.0.b3"
+__version__ = "0.0.1"
 
 # Enable support for `from Qt import *`
 __all__ = []
@@ -57,12 +57,6 @@ QT_SIP_API_HINT = os.getenv("QT_SIP_API_HINT")
 # Reference to Qt.py
 Qt = sys.modules[__name__]
 Qt.QtCompat = types.ModuleType("QtCompat")
-
-try:
-    long
-except NameError:
-    # Python 3 compatibility
-    long = int
 
 
 """Common members of all bindings
@@ -741,13 +735,13 @@ def _wrapinstance(ptr, base=None):
         See :func:`QtCompat.wrapInstance()`
 
     Arguments:
-        ptr (long): Pointer to QObject in memory
+        ptr (int): Pointer to QObject in memory
         base (QObject, optional): Base class to wrap with. Defaults to QObject,
             which should handle anything.
 
     """
 
-    assert isinstance(ptr, long), "Argument 'ptr' must be of type <long>"
+    assert isinstance(ptr, int), "Argument 'ptr' must be of type <int>"
     assert (base is None) or issubclass(base, Qt.QtCore.QObject), (
         "Argument 'base' must be of type <QObject>")
 
@@ -761,7 +755,7 @@ def _wrapinstance(ptr, base=None):
         raise AttributeError("'module' has no attribute 'wrapInstance'")
 
     if base is None:
-        q_object = func(long(ptr), Qt.QtCore.QObject)
+        q_object = func(int(ptr), Qt.QtCore.QObject)
         meta_object = q_object.metaObject()
         class_name = meta_object.className()
         super_class_name = meta_object.superClass().className()
@@ -775,7 +769,7 @@ def _wrapinstance(ptr, base=None):
         else:
             base = Qt.QtCore.QObject
 
-    return func(long(ptr), base)
+    return func(int(ptr), base)
 
 
 def _translate(context, sourceText, *args):

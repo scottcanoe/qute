@@ -1,5 +1,5 @@
 from ..vendor import Qt
-from ..vendor import scribble
+from .. import scribble
 
 
 # ------------------------------------------------------------------------------
