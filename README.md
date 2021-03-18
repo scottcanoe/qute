@@ -5,12 +5,12 @@ This is a fork of Michael Malinowski's `qute`, a Qt helper library (https://gith
  
 ### Core
   - Support `PyQt6` and `PySide6`.
-  - Roll in my qt application layer that works around the `QApplication`'s default behavior that makes it difficult to create and run applications after the first application has terminated.
+  - Roll in my qt application layer that works around the `QApplication`'s default behavior that makes it difficult to create and run applications after the first application has terminated. Also, possibly use scribble to help share data between subsequent `QApplication` executions.
   - Roll in my console widget.
 
 ### Scribble
   - Cache `ScribbleDictionary` instances so all users of a dictionary will be using identically the same dictionary.
-  - Support custom JSON serializers. 
+  - Support custom JSON serializers.
 
 
 ## General Usage
