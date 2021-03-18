@@ -5,7 +5,7 @@ This is a fork of Michael Malinowski's `qute`, a Qt helper library (https://gith
  
 ### Core
   - Support `PyQt6` and `PySide6`.
-  - Roll in my qt application layer that works around the `QApplication`'s default behavior that makes it difficult to create and run applications after the first application has terminated. Also, possibly use scribble to help share data between subsequent `QApplication` executions.
+  - Add my `QApplication` wrapper that works around problems with creating and executing a second `QApplication` after the first has finished. Also, possibly use scribble to help data persist data between subsequent `QApplication` executions.
   - Roll in my console widget.
 
 ### Scribble
